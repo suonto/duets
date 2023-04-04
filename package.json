@@ -1,0 +1,15 @@
+{
+  "name": "duets",
+  "version": "0.0.1",
+  "description": "Do U Even TypeScript (DUETS)",
+  "main": "index.ts",
+  "repository": "git@github.com:suonto/duets.git",
+  "author": "suonto",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  }
+}
