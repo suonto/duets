@@ -46,3 +46,12 @@ const fishFoodTexturePreferences: FishFoodTexturePreferences = (
 console.log(fishFoodTexturePreferences.fish_stick);
 console.log(fishFoodTexturePreferences.fish_ball);
 console.log(fishFoodTexturePreferences.fish_soup);
+
+/**
+ * This is an array with 1-3 strings in it.
+ *
+ * Examples:
+ * const myArray: OneToThreeStrings = []; -> "Source has 0 element(s) but target requires 1"
+ * const myArray: OneToThreeStrings = ["foo", "foo", "foo", "foo"]; -> "Source has 4 element(s) but target allows only 3"
+ */
+type OneToThreeStrings = [string, string?, string?];
