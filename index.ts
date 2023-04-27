@@ -3,6 +3,17 @@
  *
  * Create a new type that has all properties of T but
  * with all property names prefixed with P
+ *
+ * Explanations:
+ * [K in keyof T]: T[K] is a mapped type over T keys
+ * Docs: https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
+ *
+ * as K extends string ? `${P}${K}` : never is conditional transformer,
+ * basically adds the prefix P in front of every T key (K). Also
+ * adds the assumption that all keys of T are strings.
+ * Docs: https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
+ *
+ * TL;DR; Prefixed is a conditional mapped type.
  */
 export type Prefixed<T, P extends string> = {
   [K in keyof T as K extends string ? `${P}${K}` : never]: T[K];
@@ -50,6 +61,7 @@ console.log(fishFoodTexturePreferences.fish_soup);
 /**
  * This is an array with 1-3 strings in it.
  * Or artificially, a tuple type with optional elements.
+ * Docs: https://www.typescriptlang.org/docs/handbook/basic-types.html#tuple
  * (in reality tuples are arrays with fixed elements).
  *
  * Examples:
@@ -76,6 +88,8 @@ myArr[0];
  * when in reality the value is undefined.
  * Destructuring arrays and objects in general is not type-safe.
  * Destructuring (unmutilated) tuples is type-safe (for example the first element of OneToThreeStrings).
+ * This is why you should use --noUncheckedIndexedAccess
+ * https://www.typescriptlang.org/tsconfig#noUncheckedIndexedAccess
  */
 const array = ["foo"];
 array.pop();
